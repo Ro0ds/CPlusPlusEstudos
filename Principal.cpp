@@ -7,13 +7,11 @@ int main() {
 string food = "Pizza";
 string* ptr = &food;
 
-cout << "Food: " << food << "\n";
-cout << "Memory address of food: " <<  &food << "\n";
-cout << "Memory address with pointer: " << ptr << "\n";
+cout << "Memory address with the pointer: " << ptr << "\n";
+cout << "The value with the pointer: " << *ptr << "\n";
 
-// Variavel "food" armazena "Pizza"
 // "&food" referencia o endereço na memoria da variavel "food"
-// "ptr" armazena o endereço na memoria da variavel food
+// "*ptr" retorna o valor bruto usando o endereço da memoria referenciada
 
 return 0;
 }
