@@ -4,25 +4,19 @@
 using namespace std;
 
 int main() {
-    struct Principal{
-    int numero = 0;
+
+struct TipoDeVar {
+    int numero;
     string nome;
-    string sobrenome;
-    string nomeCompleto;
-} dados;
+};
 
-cout << "Nome: " << dados.nome;
-getline (cin, dados.nome);
+TipoDeVar teste;
 
-cout << "Sobrenome: " << dados.sobrenome;
-getline (cin, dados.sobrenome);
+teste.nome = "Rodrigo";
+teste.numero = 1;
 
-dados.nomeCompleto = dados.nome  + " " + dados.sobrenome;
-
-cout << "\nNumero: " << ++dados.numero << "\n";
-cout << "Nome: " << dados.nome << "\n";
-cout << "Sobrenome: " << dados.sobrenome << "\n";
-cout << "Nome completo: " << dados.nomeCompleto << "\n";
+cout << "Nome: " << teste.nome << "\n";
+cout << "Numero: " << teste.numero << "\n";
 
 return 0;
 }
