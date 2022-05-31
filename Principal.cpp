@@ -4,25 +4,39 @@
 using namespace std;
 
 class Car{
-        public:
-            string brand;
-            string model;
-            int year;
-            Car(string Brand, string Model, int Year);
+    private:
+        string brand;
+        string model;
+        int year;
+
+    public:
+        void setCar(string _brand, string _model, int _year){
+            brand = _brand;
+            model = _model;
+            year = _year;
+        }
+
+        string getModel(){
+            return model;
+        }
+
+        string getBrand(){
+            return brand;
+        }
+
+        int getYear(){
+            return year;
+        }
 };
 
-Car::Car(string Brand, string Model, int Year){
-    brand = Brand;
-    model = Model;
-    year = Year;
-}
-
 int main() {
-    Car carroUm("BMW", "M5", 2022);
-    Car carroDois("Ford", "Mustang", 1999);
+    Car carroUm, carroDois;
 
-    cout << "Carro 1: " << "Marca: " << carroUm.brand << " | Modelo: " << carroUm.model << " | Ano: " << carroUm.year << "\n";
-    cout << "Carro 2: " << "Marca: " << carroDois.brand << " | Modelo: " << carroDois.model << " | Ano: " << carroDois.year << "\n";
+    carroUm.setCar("BMW", "M5", 2022);
+    carroDois.setCar("Ford", "Mustang", 1999);
+
+    cout << "Carro 1: " << "Marca: " << carroUm.getBrand() << " | Modelo: " << carroUm.getModel() << " | Ano: " << carroUm.getYear() << "\n";
+    cout << "Carro 2: " << "Marca: " << carroDois.getBrand() << " | Modelo: " << carroDois.getModel() << " | Ano: " << carroDois.getYear() << "\n";
     
     return 0;
 }
