@@ -3,40 +3,34 @@
 
 using namespace std;
 
-class Car{
-    private:
-        string brand;
-        string model;
-        int year;
-
+class Vehicle{
     public:
-        void setCar(string _brand, string _model, int _year){
-            brand = _brand;
-            model = _model;
-            year = _year;
-        }
-
-        string getModel(){
-            return model;
-        }
-
-        string getBrand(){
-            return brand;
-        }
-
-        int getYear(){
-            return year;
+        string brand = "Ford";
+        void honk(){
+            cout << "bibi\n";
         }
 };
 
+class Car : public Vehicle {
+    public:
+        string model = "Mustang";
+};
+
+// Herança -- Inheritance
+// Acessar outras classes herdando seus metodos
+// Classe pai: Vehicle
+// Classe filho: Car
+// A Vehicle can be a car, but there are other types of vehicles
+// So the class Car can inherit from the class Vehicle all it's objects and methods
+
+// Use ": public className" to inherit from another class
+
+
 int main() {
-    Car carroUm, carroDois;
+    Car meuCarro;
+    meuCarro.honk();
 
-    carroUm.setCar("BMW", "M5", 2022);
-    carroDois.setCar("Ford", "Mustang", 1999);
-
-    cout << "Carro 1: " << "Marca: " << carroUm.getBrand() << " | Modelo: " << carroUm.getModel() << " | Ano: " << carroUm.getYear() << "\n";
-    cout << "Carro 2: " << "Marca: " << carroDois.getBrand() << " | Modelo: " << carroDois.getModel() << " | Ano: " << carroDois.getYear() << "\n";
+    cout << meuCarro.brand + " " + meuCarro.model;
     
     return 0;
 }
