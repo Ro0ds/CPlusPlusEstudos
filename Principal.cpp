@@ -16,15 +16,15 @@ class Car : public Vehicle {
         string model = "Mustang";
 };
 
-// Herança -- Inheritance
-// Acessar outras classes herdando seus metodos
-// Classe pai: Vehicle
-// Classe filho: Car
-// A Vehicle can be a car, but there are other types of vehicles
-// So the class Car can inherit from the class Vehicle all it's objects and methods
+class CarColor : public Car{
 
-// Use ": public className" to inherit from another class
+};
 
+// Multilevel inheritance
+// Class can inherit from another class who is derived from another class
+// Vehicle: father
+// Car: Child
+// CarColor: Grand Child
 
 int main() {
     Car meuCarro;
