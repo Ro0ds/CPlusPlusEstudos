@@ -16,15 +16,15 @@ class Car : public Vehicle {
         string model = "Mustang";
 };
 
-class CarColor : public Car{
+class CarColor : public Car, public Vehicle{
 
 };
 
-// Multilevel inheritance
-// Class can inherit from another class who is derived from another class
+// Multiple inheritance
+// Class can inherit from more than one class, using comma
 // Vehicle: father
-// Car: Child
-// CarColor: Grand Child
+// Car: father
+// CarColor: child
 
 int main() {
     Car meuCarro;
