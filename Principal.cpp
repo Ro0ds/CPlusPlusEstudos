@@ -5,23 +5,18 @@
 using namespace std;
 
 int main() {
-    string textoSaida;
-
-    // Cria a abre o arquivo
-    // ofstream meuArquivo("texto.txt");
-
-    // Escreve no arquivo
-    // meuArquivo << "Files writing with <<";
-
-    // Lê arquivo
-    ifstream meuArquivo("texto.txt");
-
-    while (getline (meuArquivo, textoSaida)){
-        cout << textoSaida;
+    try{
+        int age = 15;
+        if (age >= 18){
+            cout << "Access granted - old enough.";
+        }
+        else{
+            throw(age);
+        }
     }
-
-    // Fecha o arquivo (boas práticas)
-    meuArquivo.close();
+    catch (int myNum){
+        cout << "Access denied - Age is: " << myNum;
+    }
 
     return 0;
 }
