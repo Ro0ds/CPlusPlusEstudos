@@ -1,36 +1,27 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
-class Vehicle{
-    public:
-        string brand = "Ford";
-        void honk(){
-            cout << "bibi\n";
-        }
-};
-
-class Car : public Vehicle {
-    public:
-        string model = "Mustang";
-};
-
-class CarColor : public Car, public Vehicle{
-
-};
-
-// Multiple inheritance
-// Class can inherit from more than one class, using comma
-// Vehicle: father
-// Car: father
-// CarColor: child
-
 int main() {
-    Car meuCarro;
-    meuCarro.honk();
+    string textoSaida;
 
-    cout << meuCarro.brand + " " + meuCarro.model;
-    
+    // Cria a abre o arquivo
+    // ofstream meuArquivo("texto.txt");
+
+    // Escreve no arquivo
+    // meuArquivo << "Files writing with <<";
+
+    // Lê arquivo
+    ifstream meuArquivo("texto.txt");
+
+    while (getline (meuArquivo, textoSaida)){
+        cout << textoSaida;
+    }
+
+    // Fecha o arquivo (boas práticas)
+    meuArquivo.close();
+
     return 0;
 }
